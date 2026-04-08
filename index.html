@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RANIII — Web3 Content Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F2EDE4;
+      --brown-dark: #2E1A0E;
+      --brown-mid: #5C3D26;
+      --brown-light: #A07850;
+      --warm-accent: #C4925A;
+      /* Center matches photo grey bg (~228,228,232), outer ring is warm gold */
+      --bg-gradient: radial-gradient(ellipse 38% 70% at 50% 40%,
+          #E9E8E6 0%,
+          #EDE2C2 22%,
+          #F0CE80 40%,
+          #FFD060 54%,
+          #F5DFB8 72%,
+          #F2EDE4 88%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--brown-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: grid;
+  /* 3 kolom: logo | links tengah | contact */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 24px 52px;
+  background: transparent;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+
+nav.scrolled {
+  background: rgba(242, 237, 228, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.nav-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--brown-dark);
+  text-decoration: none;
+  justify-self: start;
+}
+
+/* Links center */
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  justify-self: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--brown-mid);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--brown-dark); }
+
+/* Contact button kanan sendiri */
+.nav-cta-standalone {
+  justify-self: end;
+  background: var(--brown-dark);
+  color: var(--cream) !important;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.nav-cta-standalone:hover { 
+  background: var(--brown-mid); 
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  nav {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 24px;
+  }
+
+  .nav-links { display: none; }
+
+  .nav-cta-standalone { justify-self: end; }
+}
+
+/* ══ HERO ══ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 38% 48% at 50% 18%,
+      #F5E84A 0%,
+      #EFE070 22%,
+      #F5ECA8 48%,
+      #F2EDE4 78%,
+      #F2EDE4 100%);
+}
+
+.hero-photo-wrap {
+  position: absolute;
+  bottom: 0;
+  top: auto;          /* ← ganti dari top:0 ke bottom:0 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(400px, 50%, 620px);
+  height: 90%;        /* foto tidak full height — beri ruang atas */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.hero-greeting {
+  position: absolute;
+  top: 18%;           /* setinggi dahi/kepala */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(56px, 8.5vw, 112px);
+  letter-spacing: -2px;
+  white-space: nowrap;
+  color: var(--brown-dark);
+  line-height: 1;
+  opacity: 0.92;
+}
+
+.hero-badge {
+  position: absolute;
+  left: 52px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(92, 61, 38, 0.08);
+  border-radius: 100px;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brown-mid);
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.badge-dot {
+  width: 8px; height: 8px;
+  background: #E8A020;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(232,160,32,0.5); }
+  50%      { box-shadow: 0 0 0 7px rgba(232,160,32,0); }
+}
+
+.hero-spec {
+  position: absolute;
+  right: 52px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--brown-mid);
+  line-height: 1.85;
+  text-align: right;
+  max-width: 200px;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 52px 40px;
+}
+
+.hero-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 11vw, 148px);
+  line-height: 0.85;
+  letter-spacing: -4px;
+  color: var(--brown-dark);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3.2vw, 46px);
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--brown-dark);
+  letter-spacing: -1px;
+}
+
+/* ══ MOBILE RESPONSIVE — Comprehensive ══ */
+@media (max-width: 768px) {
+
+.hero {
+  height: 100svh;
+  min-height: 600px;
+}
+
+/* Sembunyikan badge di mobile — terlalu crowded */
+.hero-badge { display: none; }
+.hero-spec  { display: none; }
+
+/* Foto: full width, crop bagian bawah (kaki) pakai clip-path */
+.hero-photo-wrap {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  transform: none;
+  overflow: hidden;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Geser crop ke atas — tampilkan kepala & badan, buang kaki */
+  object-position: center 15%;
+}
+
+/* Nama & title tetap di bawah */
+.hero-bottom {
+  padding: 0 20px 24px;
+  /* Gradient supaya teks terbaca di atas foto */
+  background: linear-gradient(
+    to top,
+    rgba(242,237,228,0.95) 0%,
+    rgba(242,237,228,0.6) 40%,
+    transparent 100%
+  );
+}
+
+.hero-name {
+  font-size: clamp(40px, 11vw, 64px);
+  letter-spacing: -2px;
+  line-height: 0.88;
+}
+
+.hero-title {
+  font-size: clamp(14px, 4vw, 22px);
+  letter-spacing: -0.3px;
+}
+}
+
+  /* ── ABOUT (Page 2) ── */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 52px 20px 60px;
+  }
+
+  .about-image { order: -1; }
+
+  .about-image img {
+    aspect-ratio: 4/3;
+    object-position: top center;
+  }
+
+  .about-image-tag {
+    font-size: 10px;
+    padding: 10px 14px;
+    bottom: -12px;
+    left: -8px;
+  }
+
+  .about-text p { font-size: 15px; }
+
+  /* ── DIVIDER ── */
+  .divider { margin: 0 20px; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 56px 20px; }
+
+  /* ── SKILLS ── */
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { padding: 28px 24px; }
+
+  /* ── AMBASSADOR ── */
+  .ambassador-grid { grid-template-columns: 1fr; gap: 20px; }
+  #ambassador { padding: 56px 20px !important; }
+  .amb-card { padding: 28px 24px; }
+
+  /* ── PROJECTS ── */
+  .projects-intro { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* ── ARTICLES ── */
+  #articles { padding: 56px 20px !important; }
+  .content-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+  .content-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* ── STATS ── */
+  .stats-big { grid-template-columns: 1fr 1fr; }
+  .stats-small { grid-template-columns: 1fr 1fr; }
+  .stat-item { padding: 24px 16px; }
+  .stats-small .stat-item { padding: 18px 14px; }
+
+  /* ── CONTACT ── */
+  .contact { padding: 72px 20px; }
+  .contact-links { gap: 10px; }
+  .contact-link { padding: 11px 18px; font-size: 13px; }
+
+  /* ── FOOTER ── */
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 24px 20px;
+  }
+}
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 60px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 70px);
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--brown-dark);
+    }
+    .divider {
+      height: 1px;
+      background: rgba(92,61,38,0.15);
+      margin: 0 60px;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--brown-mid);
+      margin-top: 28px;
+    }
+    .about-image { position: relative; }
+    .about-image-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #E9E8E6; /* matches photo bg color so edges blend */
+      box-shadow: 0 24px 80px rgba(46,26,14,0.14);
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    /* Accent bar on left edge */
+    .about-image-frame::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10%; bottom: 10%;
+      width: 4px;
+      background: var(--warm-accent);
+      border-radius: 0 4px 4px 0;
+      z-index: 1;
+    }
+    .about-image-tag {
+      position: absolute;
+      bottom: -18px;
+      left: -18px;
+      background: var(--brown-dark);
+      color: var(--cream);
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(46,26,14,0.2);
+    }
+
+    /* ── SKILLS ── */
+    .skills { background: var(--brown-dark); color: var(--cream); }
+    .skills .section-title { color: var(--cream); }
+    .skills .section-label { color: var(--warm-accent); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .skill-card {
+      padding: 40px 36px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+    }
+    .skill-card:hover { background: rgba(255,255,255,0.05); }
+    .skill-number {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--warm-accent);
+      margin-bottom: 20px;
+    }
+    .skill-name {
+      font-weight: 800; font-size: 18px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 12px; color: var(--cream);
+    }
+    .skill-desc { font-size: 13px; line-height: 1.7; color: rgba(242,237,228,0.6); }
+
+    /* ── AMBASSADOR ── */
+    .ambassador-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .amb-card {
+      border: 1.5px solid rgba(92,61,38,0.15);
+      border-radius: 16px;
+      padding: 40px 32px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .amb-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--warm-accent);
+    }
+    .amb-card:hover { border-color: var(--warm-accent); transform: translateY(-4px); }
+    .amb-logo {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px;
+      color: white; margin-bottom: 20px;
+    }
+    .amb-logo.linera { background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); }
+    .amb-logo.fogo   { background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); }
+    .amb-logo.osl    { background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%); }
+    .amb-role {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 8px;
+    }
+    .amb-project {
+      font-weight: 900; font-size: 24px;
+      text-transform: uppercase;
+      color: var(--brown-dark); margin-bottom: 18px;
+      line-height: 1.1;
+    }
+    .amb-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .amb-points li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; line-height: 1.6; color: var(--brown-mid);
+    }
+    .amb-points li::before { content: '→'; color: var(--warm-accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PROJECTS ── */
+    .projects { background: #EDE8DF; }
+    .projects-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: end;
+      margin-bottom: 60px;
+    }
+    .projects-desc { font-size: 15px; line-height: 1.8; color: var(--brown-mid); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--cream);
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(92,61,38,0.1);
+      text-decoration: none;
+      display: block;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(46,26,14,0.12);
+    }
+    .project-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #C4A47C 0%, #8B6B4A 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .project-thumb-label {
+      font-weight: 900; font-size: 13px;
+      text-align: center; color: white;
+      line-height: 1.3; padding: 12px; text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .play-btn {
+      position: absolute;
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .project-card:hover .play-btn { transform: scale(1.1); }
+    .play-btn svg { margin-left: 3px; }
+    .project-info { padding: 18px 20px; }
+    .project-tag {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 6px;
+    }
+    .project-name { font-weight: 700; font-size: 14px; color: var(--brown-dark); line-height: 1.3; }
+
+    /* ── CONTENT / ARTICLES ── */
+    .content-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: end; margin-bottom: 60px;
+    }
+    .content-desc { font-size: 15px; line-height: 1.8; color: var(--brown-mid); }
+    .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .content-card {
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(92,61,38,0.1);
+      transition: transform 0.3s;
+      text-decoration: none; display: block;
+    }
+    .content-card:hover { transform: translateY(-4px); }
+    .content-thumb {
+      width: 100%; aspect-ratio: 4/3;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .content-thumb p {
+      color: white; font-weight: 800;
+      font-size: 14px; text-align: center; line-height: 1.4;
+    }
+    .content-body { background: var(--cream); padding: 18px 20px; }
+    .content-type {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 6px;
+    }
+    .content-title-card { font-weight: 700; font-size: 13px; color: var(--brown-dark); line-height: 1.4; }
+
+    /* ── STATS ── */
+    .stats { background: var(--brown-dark); color: var(--cream); }
+    .stats .section-title { color: var(--cream); }
+    .stats .section-label { color: var(--warm-accent); }
+    .stats-big {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 50px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stats-small {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      margin-top: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-item {
+      padding: 40px 28px;
+      background: var(--brown-dark);
+      text-align: center;
+    }
+    .stat-item.featured { background: rgba(196,146,90,0.12); }
+    .stat-number {
+      font-weight: 900;
+      font-size: clamp(28px, 3.5vw, 52px);
+      color: var(--cream);
+      letter-spacing: -1px; line-height: 1;
+    }
+    .stat-number.highlight { color: var(--warm-accent); }
+    .stat-label {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(242,237,228,0.45); margin-top: 10px;
+    }
+    .stat-platform { font-size: 11px; font-weight: 500; color: var(--warm-accent); margin-top: 5px; }
+    .stat-change { font-size: 11px; font-weight: 600; color: #5CB85C; margin-top: 4px; }
+    .stats-small .stat-item { padding: 24px 20px; }
+    .stats-small .stat-number { font-size: clamp(18px, 2vw, 28px); }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--cream); text-align: center; padding: 120px 60px; }
+    .contact-headline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(36px, 6vw, 80px);
+      color: var(--brown-dark);
+      margin: 20px 0 60px; line-height: 1.1;
+    }
+    .contact-links {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      border: 1.5px solid rgba(92,61,38,0.2);
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--brown-dark);
+      font-weight: 600; font-size: 14px;
+      transition: all 0.3s;
+    }
+    .contact-link:hover {
+      background: var(--brown-dark); color: var(--cream);
+      border-color: var(--brown-dark);
+    }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 40px; font-size: 15px; color: var(--brown-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(92,61,38,0.3);
+      padding-bottom: 4px; transition: color 0.2s;
+    }
+    .contact-email:hover { color: var(--brown-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-dark);
+      color: rgba(242,237,228,0.5);
+      padding: 32px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px;
+    }
+    footer .footer-logo { font-weight: 900; font-size: 16px; color: var(--cream); letter-spacing: 2px; }
+
+    /* ── RESPONSIVE TABLET (768px-1024px) ── */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      nav { padding: 20px 32px; }
+      section { padding: 80px 32px; }
+      .hero-photo-wrap { width: 44%; }
+      .hero-name { font-size: clamp(56px, 9vw, 110px); }
+      .about { gap: 48px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .ambassador-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-big { grid-template-columns: repeat(2, 1fr); }
+      .stats-small { grid-template-columns: repeat(3, 1fr); }
+      .divider { margin: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">RANIII.</a>
+    
+    <!-- Nav links di tengah -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stats">Stats</a></li>
+    </ul>
+  
+    <!-- Contact tetap kanan sendiri -->
+    <a href="#contact" class="nav-cta-standalone">Contact</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="rani.png" alt="Raniii" />
+    </div>
+  
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for collaboration
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-name">I AM<br/>RANIII</div>
+      <div class="hero-title">WEB3<br/>CONTENT<br/>CREATOR</div>
+    </div>
+  
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label">— About Me</p>
+      <h2 class="section-title">WHO I AM</h2>
+      <p>Focused on introducing blockchain technology to make it more accessible to the public. I produce research-driven short form videos that make protocols and narratives easier to understand.</p>
+      <p style="margin-top:16px;">Experienced in delivering clear and transparent content regarding technical tutorials, alpha analysis, and airdrop strategies to assist users in navigating the decentralized ecosystem efficiently.</p>
+    </div>
+    <div class="about-image">
+      <div class="about-image-frame">
+        <img src="rani2.png" alt="Raniii" />
+      </div>
+      <div class="about-image-tag">Web3 Creator & KOL</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills" id="skills">
+    <p class="section-label">— My Expertise</p>
+    <h2 class="section-title">PERSONAL<br/>SKILLS</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-number">01</div>
+        <div class="skill-name">Deep Research & Analysis</div>
+        <p class="skill-desc">Proficient in performing in-depth project research, whitepaper analysis, and identifying market trends within the Web3 ecosystem.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">02</div>
+        <div class="skill-name">Communication</div>
+        <p class="skill-desc">Skilled in simplifying complex technical information into clear, engaging, and educational narratives for a diverse audience.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">03</div>
+        <div class="skill-name">Video Editing & Visual Design</div>
+        <p class="skill-desc">Skilled in CapCut and Canva to create high-impact educational content for various digital platforms.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">04</div>
+        <div class="skill-name">Photography & Videography</div>
+        <p class="skill-desc">Competent in visual storytelling through professional-grade image and video production.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">05</div>
+        <div class="skill-name">Community Management</div>
+        <p class="skill-desc">Capable of fostering growth and maintaining engagement across X (Twitter), Discord, and Telegram.</p>
+      </div>
+      <div class="skill-card" style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);">
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:rgba(242,237,228,0.12);text-align:center;line-height:1.4;">Building the<br/>decentralized<br/>future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AMBASSADOR ── -->
+  <section id="ambassador" style="background:#EDE8DF; padding:100px 60px;">
+    <p class="section-label">— Roles & Affiliations</p>
+    <h2 class="section-title">AMBASSADOR<br/>& COMMUNITY</h2>
+    <div class="ambassador-grid">
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="linera_logo.png" alt="Linera" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+        </div>
+        <div class="amb-role">Ambassador</div>
+        <div class="amb-project">LINERA.IO</div>
+        <ul class="amb-points">
+          <li>Contributing to the Linera ecosystem by creating educational content and fostering community growth.</li>
+          <li>Bridging the communication gap between the protocol and the public through research-driven insights.</li>
+        </ul>
+      </div>
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="fogo_logo.png" alt="Fogo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+        </div>
+        <div class="amb-role">Gigablaze</div>
+        <div class="amb-project">FOGO.IO</div>
+        <ul class="amb-points">
+          <li>Selected as a "Gigablaze" to drive community engagement and provide high quality educational content.</li>
+          <li>Simplifying project narratives to assist in the onboarding of new users into the Fogo ecosystem.</li>
+        </ul>
+      </div>
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="osl_logo.png" alt="OSL Indonesia" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+        </div>
+        <div class="amb-role">Ambassador</div>
+        <div class="amb-project">OSL INDONESIA</div>
+        <ul class="amb-points">
+          <li>Representing OSL Indonesia to grow community presence and drive educational content for the local market.</li>
+          <li>Bridging blockchain adoption through clear, accessible content for Indonesian audiences.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects" id="projects">
+    <div class="projects-intro">
+      <div>
+        <p class="section-label">— Content Portfolio</p>
+        <h2 class="section-title">PROJECT<br/>GALLERY</h2>
+      </div>
+      <p class="projects-desc">Research-driven educational videos where I simplify complex blockchain concepts and narratives. Tap each project to watch on X.</p>
+    </div>
+    <div class="projects-grid">
+
+      <a href="https://x.com/ranimth07/status/1979121377014878640" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb1.png" alt="$MMT Community Offering" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · UGC Challenge</div>
+          <div class="project-name">$MMT Community Offering</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1978421451804844094" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb2.jpeg" alt="Learn FOGO with Raniii" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · Fogo Sessions EP4</div>
+          <div class="project-name">Learn FOGO with Raniii</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/2009215044584935452" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb3.png" alt="Compounding Interest" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · 1 Minute Series</div>
+          <div class="project-name">Let's Talk About Compounding Interest</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1970866153821225353" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb4.jpeg" alt="Linera Testnet Conway" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · Education</div>
+          <div class="project-name">Linera Testnet Conway</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1999459577734266980" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb5.png" alt="Mantle x RedStone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · RWA</div>
+          <div class="project-name">Mantle x RedStone</div>
+        </div>
+      </a>
+    
+      <!-- CTA Card -->
+      <div class="project-card" style="cursor:default; background:#EDE8DF; display:flex; align-items:center; justify-content:center; min-height:160px;">
+        <div style="text-align:center; padding:20px;">
+          <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:var(--brown-light); line-height:1.5;">More on<br/>my X profile →</p>
+          <a href="https://x.com/ranimth07" target="_blank" style="display:inline-block; margin-top:14px; background:var(--brown-dark); color:var(--cream); padding:8px 20px; border-radius:100px; font-size:12px; font-weight:700; text-decoration:none; letter-spacing:1px;">@ranimth07</a>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── ARTICLES & DESIGN ── -->
+  <section id="articles" style="background:var(--cream); padding:100px 60px;">
+    <div class="content-header">
+      <div>
+        <p class="section-label">— Written & Visual Work</p>
+        <h2 class="section-title">ARTICLE &<br/>DESIGN</h2>
+      </div>
+      <p class="content-desc">Producing informative articles and visual designs focused on providing actionable insights and essential tips within the Web3 space.</p>
+    </div>
+    <div class="content-grid">
+
+      <!-- Card 1: VIDEO (FWBFEST.mp4) -->
+      <a href="https://x.com/ranimth07/status/1950552485531402668" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <video
+            autoplay muted loop playsinline
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+          >
+            <source src="FWBFEST.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="content-body">
+          <div class="content-type">Video · 15.3K Views</div>
+          <div class="content-title-card">If tennis ran on microchains — Linera × FWBFEST'25</div>
+        </div>
+      </a>
+    
+      <!-- Card 2: IMAGE (Jumper Giveaway) -->
+      <a href="https://x.com/ranimth07/status/1986029341730369850" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <img
+  src="Jumper_Giveaway.jpeg"
+  alt="Jumper Giveaway"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain; background:#f5f0ff;"
+/>
+        </div>
+        <div class="content-body">
+          <div class="content-type">Design · Campaign</div>
+          <div class="content-title-card">Jumper Giveaway — Win with Jumper Pass</div>
+        </div>
+      </a>
+    
+      <!-- Card 3: IMAGE (5 Things about Bounties) -->
+      <a href="https://x.com/ranimth07/status/2011062688861061568" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <img
+  src="5_things_about_Bounties.jpg"
+  alt="5 Things About Bounties"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain; background:#f8f8f8;"
+/>
+        </div>
+        <div class="content-body">
+          <div class="content-type">Thread · 654 Impressions</div>
+          <div class="content-title-card">5 Things You Should Know Before Joining Bounties</div>
+        </div>
+      </a>
+    
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="stats" id="stats">
+    <p class="section-label">— By The Numbers</p>
+    <h2 class="section-title">TWITTER<br/>ANALYTICS</h2>
+
+    <!-- Big 4 stats -->
+    <div class="stats-big">
+      <div class="stat-item featured">
+        <div class="stat-number highlight">1.4M</div>
+        <div class="stat-label">Total Impressions</div>
+        <div class="stat-change">↑ 138%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,848</div>
+        <div class="stat-label">Followers</div>
+        <div class="stat-platform">@ranimth07</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5,151</div>
+        <div class="stat-label">Total Posts</div>
+        <div class="stat-platform">X · Twitter</div>
+      </div>
+      <div class="stat-item featured">
+        <div class="stat-number highlight">478K</div>
+        <div class="stat-label">Top Impressions</div>
+        <div class="stat-platform">Per Post</div>
+      </div>
+    </div>
+
+    <!-- Small stats row -->
+    <div class="stats-small">
+      <div class="stat-item">
+        <div class="stat-number">65.4K</div>
+        <div class="stat-label">Engagements</div>
+        <div class="stat-change">↑ 73%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4.5%</div>
+        <div class="stat-label">Engagement Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10.9K</div>
+        <div class="stat-label">Total Likes</div>
+        <div class="stat-change">↑ 65%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12.1K</div>
+        <div class="stat-label">Profile Visits</div>
+        <div class="stat-change">↑ 56%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,167</div>
+        <div class="stat-label">Top Likes</div>
+        <div class="stat-platform">Single Tweet</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <p class="section-label">— Let's Work Together</p>
+    <h2 class="contact-headline">Ready to collaborate?</h2>
+    <div class="contact-links">
+      <a href="https://x.com/ranimth07" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L2.017 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @ranimth07
+      </a>
+      <a href="https://t.me/ranimth07" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.83.941z"/></svg>
+        @ranimth07
+      </a>
+      <a href="#" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.113 18.1.132 18.11a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        inirani
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="footer-logo">RANIII.</span>
+    <span>Web3 Content Creator & KOL · 2026</span>
+    <span>Designed with ♥</span>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.skill-card, .amb-card, .project-card, .content-card, .stat-item').for
