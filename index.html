@@ -24,7 +24,7 @@
           #F2EDE4 88%);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -100,16 +100,7 @@ nav.scrolled {
 }
 
 /* Mobile navbar */
-@media (max-width: 768px) {
-  nav {
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 24px;
-  }
-
-  .nav-links { display: none; }
-
-  .nav-cta-standalone { justify-self: end; }
-}
+/* mobile nav handled in main mobile query below */
 
 /* ══ HERO ══ */
 .hero {
@@ -252,69 +243,85 @@ nav.scrolled {
 /* ══ MOBILE RESPONSIVE — Comprehensive ══ */
 @media (max-width: 768px) {
 
-.hero {
-  height: 100svh;
-  min-height: 600px;
-}
+  /* ── NAVBAR ── */
+  nav {
+    grid-template-columns: 1fr 1fr;
+    padding: 18px 20px;
+  }
+  .nav-links { display: none; }
+  .nav-cta-standalone { justify-self: end; font-size: 13px; padding: 9px 18px; }
 
-/* Sembunyikan badge di mobile — terlalu crowded */
-.hero-badge { display: none; }
-.hero-spec  { display: none; }
+  /* ── HERO ── */
+  .hero {
+    height: 100svh;
+    min-height: 600px;
+    overflow: hidden;
+  }
 
-/* Foto: full width, crop bagian bawah (kaki) pakai clip-path */
-.hero-photo-wrap {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  transform: none;
-  overflow: hidden;
-}
+  .hero-photo-wrap {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    transform: none;
+    overflow: hidden;
+  }
 
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Geser crop ke atas — tampilkan kepala & badan, buang kaki */
-  object-position: center 15%;
-}
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    transform: none;
+  }
 
-/* Nama & title tetap di bawah */
-.hero-bottom {
-  padding: 0 20px 24px;
-  /* Gradient supaya teks terbaca di atas foto */
-  background: linear-gradient(
-    to top,
-    rgba(242,237,228,0.95) 0%,
-    rgba(242,237,228,0.6) 40%,
-    transparent 100%
-  );
-}
+  .hero-badge { display: none; }
+  .hero-spec  { display: none; }
 
-.hero-name {
-  font-size: clamp(40px, 11vw, 64px);
-  letter-spacing: -2px;
-  line-height: 0.88;
-}
+  .hero-bottom {
+    padding: 0 20px 24px;
+    background: linear-gradient(
+      to top,
+      rgba(242,237,228,0.95) 0%,
+      rgba(242,237,228,0.5) 50%,
+      transparent 100%
+    );
+  }
 
-.hero-title {
-  font-size: clamp(14px, 4vw, 22px);
-  letter-spacing: -0.3px;
-}
-}
+  .hero-name {
+    font-size: clamp(40px, 11vw, 64px);
+    letter-spacing: -2px;
+    line-height: 0.88;
+  }
 
-  /* ── ABOUT (Page 2) ── */
+  .hero-title {
+    font-size: clamp(14px, 4vw, 22px);
+    letter-spacing: -0.3px;
+  }
+
+  /* ── ABOUT ── */
   .about {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 52px 20px 60px;
+    overflow: hidden;
   }
 
-  .about-image { order: -1; }
+  .about-image {
+    order: -1;
+    width: 100%;
+  }
+
+  .about-image-frame {
+    width: 100%;
+    overflow: hidden;
+  }
 
   .about-image img {
+    width: 100%;
     aspect-ratio: 4/3;
+    object-fit: cover;
     object-position: top center;
   }
 
@@ -322,44 +329,88 @@ nav.scrolled {
     font-size: 10px;
     padding: 10px 14px;
     bottom: -12px;
-    left: -8px;
+    left: 0;
   }
 
+  .about-text { width: 100%; }
   .about-text p { font-size: 15px; }
 
   /* ── DIVIDER ── */
   .divider { margin: 0 20px; }
 
   /* ── SECTION BASE ── */
-  section { padding: 56px 20px; }
+  section {
+    padding: 56px 20px;
+    overflow: hidden;
+  }
 
   /* ── SKILLS ── */
-  .skills-grid { grid-template-columns: 1fr; }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
   .skill-card { padding: 28px 24px; }
 
   /* ── AMBASSADOR ── */
-  .ambassador-grid { grid-template-columns: 1fr; gap: 20px; }
+  .ambassador-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow: hidden;
+  }
   #ambassador { padding: 56px 20px !important; }
-  .amb-card { padding: 28px 24px; }
+  .amb-card {
+    padding: 28px 24px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .amb-project { font-size: 20px; }
 
   /* ── PROJECTS ── */
-  .projects-intro { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .projects-intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .project-card { width: 100%; }
 
   /* ── ARTICLES ── */
   #articles { padding: 56px 20px !important; }
-  .content-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-  .content-grid { grid-template-columns: 1fr; gap: 16px; }
+  .content-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .content-card { width: 100%; }
 
   /* ── STATS ── */
-  .stats-big { grid-template-columns: 1fr 1fr; }
-  .stats-small { grid-template-columns: 1fr 1fr; }
+  .stats-big {
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .stats-small {
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
   .stat-item { padding: 24px 16px; }
   .stats-small .stat-item { padding: 18px 14px; }
 
   /* ── CONTACT ── */
   .contact { padding: 72px 20px; }
-  .contact-links { gap: 10px; }
+  .contact-links {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
   .contact-link { padding: 11px 18px; font-size: 13px; }
 
   /* ── FOOTER ── */
