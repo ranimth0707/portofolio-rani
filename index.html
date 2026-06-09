@@ -3,541 +3,768 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary meta -->
-  <title>RANIII — Web3 Content Creator & Multi-Project Ambassador</title>
-  <meta name="description" content="RANIII (@ranimth07) — Web3 content creator & KOL. 1.4M+ impressions, 4.5% engagement rate. Ambassador for Linera, Fogo, OSL Indonesia & Zerion. Research-driven educational content that makes blockchain accessible." />
-  <meta name="author" content="RANIII" />
-  <meta name="theme-color" content="#14110D" />
-  <link rel="canonical" href="https://ranimth.xyz/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ranimth.xyz/" />
-  <meta property="og:title" content="RANIII — Web3 Content Creator & Ambassador" />
-  <meta property="og:description" content="1.4M+ impressions · 4.5% engagement. Ambassador for Linera, Fogo, OSL Indonesia & Zerion. Research-driven Web3 educational content." />
-  <meta property="og:image" content="https://ranimth.xyz/rani.png" />
-  <meta property="og:image:alt" content="RANIII, Web3 content creator" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@ranimth07" />
-  <meta name="twitter:creator" content="@ranimth07" />
-  <meta name="twitter:title" content="RANIII — Web3 Content Creator & Ambassador" />
-  <meta name="twitter:description" content="1.4M+ impressions · 4.5% engagement. Ambassador for Linera, Fogo, OSL Indonesia & Zerion." />
-  <meta name="twitter:image" content="https://ranimth.xyz/rani.png" />
-
-  <!-- Favicon (inline, no extra request) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314110D'/%3E%3Ctext x='50' y='71' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23C4925A' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>RANIII — Web3 Content Creator</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet" />
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "RANIII",
-    "alternateName": "ranimth07",
-    "url": "https://ranimth.xyz/",
-    "jobTitle": "Web3 Content Creator & KOL",
-    "description": "Web3 content creator and ambassador producing research-driven educational content. Ambassador for Linera, Fogo, OSL Indonesia and Zerion.",
-    "sameAs": [
-      "https://x.com/ranimth07",
-      "https://t.me/ranimth07"
-    ]
-  }
-  </script>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Warm-dark palette */
-      --bg:        #14110D;
-      --bg-2:      #1C1813;
-      --bg-3:      #241E16;
-      --cream:     #F2EDE4;
-      --gold:      #C4925A;
-      --gold-soft: #E0B878;
-      --line:      rgba(224,184,120,0.14);
-      --line-soft: rgba(242,237,228,0.08);
-      --muted:     rgba(242,237,228,0.64);
-      --muted-2:   rgba(242,237,228,0.42);
-      --green:     #6FCF7E;
-
-      /* Scale */
-      --r-sm: 14px;
-      --r-md: 22px;
-      --r-lg: 30px;
-      --pad-x: 60px;
-      --maxw: 1240px;
-      --shadow: 0 24px 60px -24px rgba(0,0,0,0.55);
+      --cream: #F2EDE4;
+      --brown-dark: #2E1A0E;
+      --brown-mid: #5C3D26;
+      --brown-light: #A07850;
+      --warm-accent: #C4925A;
+      /* Center matches photo grey bg (~228,228,232), outer ring is warm gold */
+      --bg-gradient: radial-gradient(ellipse 38% 70% at 50% 40%,
+          #E9E8E6 0%,
+          #EDE2C2 22%,
+          #F0CE80 40%,
+          #FFD060 54%,
+          #F5DFB8 72%,
+          #F2EDE4 88%);
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 90px; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--cream);
+      background-color: var(--cream);
+      color: var(--brown-dark);
       overflow-x: hidden;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; }
-    img, video { display: block; max-width: 100%; }
-
-    .wrap { max-width: var(--maxw); margin: 0 auto; width: 100%; }
-
-    /* Shared eyebrow + titles */
-    .section-label {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.02;
-      letter-spacing: -1.5px;
-      color: var(--cream);
-    }
-
-    /* Focus visibility (a11y) */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--gold-soft);
-      outline-offset: 3px;
-      border-radius: 4px;
     }
 
     /* ── NAVBAR ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 20px var(--pad-x);
-      transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
-      border-bottom: 1px solid transparent;
-    }
-    nav.scrolled {
-      background: rgba(20, 17, 13, 0.82);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-logo {
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: var(--cream);
-      text-decoration: none;
-      justify-self: start;
-    }
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-      justify-self: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--cream); }
-    .nav-cta {
-      justify-self: end;
-      background: var(--gold);
-      color: var(--bg);
-      padding: 10px 24px;
-      border-radius: 100px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: grid;
+  /* 3 kolom: logo | links tengah | contact */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 24px 52px;
+  background: transparent;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+
+nav.scrolled {
+  background: rgba(242, 237, 228, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.nav-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--brown-dark);
+  text-decoration: none;
+  justify-self: start;
+}
+
+/* Links center */
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  justify-self: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--brown-mid);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--brown-dark); }
+
+/* Contact button kanan sendiri */
+.nav-cta-standalone {
+  justify-self: end;
+  background: var(--brown-dark);
+  color: var(--cream) !important;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.nav-cta-standalone:hover { 
+  background: var(--brown-mid); 
+}
+
+/* Mobile navbar */
+/* mobile nav handled in main mobile query below */
+
+/* ══ HERO ══ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 38% 48% at 50% 18%,
+      #F5E84A 0%,
+      #EFE070 22%,
+      #F5ECA8 48%,
+      #F2EDE4 78%,
+      #F2EDE4 100%);
+}
+
+.hero-photo-wrap {
+  position: absolute;
+  bottom: 0;
+  top: auto;          /* ← ganti dari top:0 ke bottom:0 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(400px, 50%, 620px);
+  height: 90%;        /* foto tidak full height — beri ruang atas */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.hero-greeting {
+  position: absolute;
+  top: 18%;           /* setinggi dahi/kepala */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(56px, 8.5vw, 112px);
+  letter-spacing: -2px;
+  white-space: nowrap;
+  color: var(--brown-dark);
+  line-height: 1;
+  opacity: 0.92;
+}
+
+.hero-badge {
+  position: absolute;
+  left: 52px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(92, 61, 38, 0.08);
+  border-radius: 100px;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brown-mid);
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.badge-dot {
+  width: 8px; height: 8px;
+  background: #E8A020;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(232,160,32,0.5); }
+  50%      { box-shadow: 0 0 0 7px rgba(232,160,32,0); }
+}
+
+.hero-spec {
+  position: absolute;
+  right: 52px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--brown-mid);
+  line-height: 1.85;
+  text-align: right;
+  max-width: 200px;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 52px 40px;
+}
+
+.hero-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 11vw, 148px);
+  line-height: 0.85;
+  letter-spacing: -4px;
+  color: var(--brown-dark);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3.2vw, 46px);
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--brown-dark);
+  letter-spacing: -1px;
+}
+
+/* ══ MOBILE RESPONSIVE — Comprehensive ══ */
+/* placeholder - moved to end of style block */
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 60px; }
+    .section-label {
+      font-size: 11px;
       font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      white-space: nowrap;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-bottom: 16px;
     }
-    .nav-cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
-
-    .mobile-menu { display: none; }
-    .nav-toggle {
-      display: none;
-      justify-self: end;
-      background: none;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 8px;
-      cursor: pointer;
-      color: var(--cream);
-    }
-    .nav-toggle svg { display: block; }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      padding: 120px var(--pad-x) 60px;
-      overflow: hidden;
-    }
-    .hero-glow {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(60% 50% at 78% 30%, rgba(196,146,90,0.22), transparent 70%),
-        radial-gradient(50% 60% at 15% 80%, rgba(196,146,90,0.10), transparent 70%);
-      pointer-events: none;
-    }
-    .hero-inner {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 50px;
-      align-items: center;
-      width: 100%;
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(111,207,126,0.10);
-      border: 1px solid rgba(111,207,126,0.30);
-      color: var(--green);
-      padding: 7px 16px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 26px;
-    }
-    .badge-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 0 rgba(111,207,126,0.6);
-      animation: pulse 2.2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(111,207,126,0.6); }
-      70% { box-shadow: 0 0 0 10px rgba(111,207,126,0); }
-      100% { box-shadow: 0 0 0 0 rgba(111,207,126,0); }
-    }
-    .hero h1 {
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
       font-weight: 900;
-      font-size: clamp(2.8rem, 8vw, 5.6rem);
-      line-height: 0.96;
-      letter-spacing: -2px;
-      margin-bottom: 8px;
+      font-size: clamp(36px, 5vw, 70px);
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--brown-dark);
     }
-    .hero h1 .accent {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold-soft);
+    .divider {
+      height: 1px;
+      background: rgba(92,61,38,0.15);
+      margin: 0 60px;
     }
-    .hero-role {
-      font-size: clamp(1rem, 2.2vw, 1.3rem);
-      color: var(--muted);
-      max-width: 34ch;
-      margin-bottom: 30px;
-    }
-    .hero-role strong { color: var(--cream); font-weight: 600; }
-    .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
-    .btn-primary, .btn-ghost {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 14px 28px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
-    }
-    .btn-primary { background: var(--gold); color: var(--bg); }
-    .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); }
-    .btn-ghost { border: 1px solid var(--line); color: var(--cream); }
-    .btn-ghost:hover { border-color: var(--gold); transform: translateY(-2px); }
-
-    .hero-mini-stats { display: flex; gap: 30px; flex-wrap: wrap; }
-    .hero-mini-stats .num {
-      font-size: 1.9rem; font-weight: 900; letter-spacing: -1px; line-height: 1;
-      color: var(--cream);
-    }
-    .hero-mini-stats .lbl { font-size: 12px; color: var(--muted-2); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 4px; }
-
-    .hero-photo {
-      position: relative;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      background:
-        radial-gradient(70% 60% at 50% 25%, rgba(196,146,90,0.30), transparent 70%),
-        linear-gradient(160deg, var(--bg-3), var(--bg-2));
-    }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-
-    /* ── SECTION SHELL ── */
-    section.block { padding: 100px var(--pad-x); }
-    .block-head { margin-bottom: 48px; }
-
-    /* ── STATS BENTO ── */
-    .stats-bento {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .stat {
-      background: var(--bg-2);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--r-md);
-      padding: 26px;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .stat:hover { transform: translateY(-3px); border-color: var(--line); }
-    .stat.feature {
-      grid-column: span 2;
-      background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
-      border-color: var(--line);
-    }
-    .stat .num {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 900; letter-spacing: -1.5px; line-height: 1;
-      color: var(--cream);
-    }
-    .stat.feature .num { color: var(--gold-soft); }
-    .stat .lbl { color: var(--muted); margin-top: 8px; font-size: 14px; }
-    .stat .delta { color: var(--green); font-size: 13px; font-weight: 600; margin-top: 6px; }
-    .stat .plat { color: var(--muted-2); font-size: 12px; margin-top: 6px; letter-spacing: 0.5px; }
-
-    /* ── AMBASSADOR ── */
-    .amb-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .amb-card {
-      background: var(--bg-2);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--r-md);
-      padding: 28px;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .amb-card:hover { transform: translateY(-4px); border-color: var(--line); }
-    .amb-logo {
-      width: 56px; height: 56px; border-radius: 50%;
-      overflow: hidden; margin-bottom: 18px;
-      border: 1px solid var(--line);
-    }
-    .amb-logo img { width: 100%; height: 100%; object-fit: cover; }
-    .amb-role {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .amb-project { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; margin: 4px 0 14px; }
-    .amb-points { list-style: none; }
-    .amb-points li {
-      position: relative; padding-left: 18px; margin-bottom: 10px;
-      color: var(--muted); font-size: 14px; line-height: 1.55;
-    }
-    .amb-points li::before {
-      content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: 700;
-    }
-
-    /* ── PROJECTS / CONTENT GRID ── */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .media-card {
-      background: var(--bg-2);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--r-md);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .media-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .media-thumb {
-      position: relative;
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: var(--bg-3);
-    }
-    .media-thumb img, .media-thumb video {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.4s;
-    }
-    .media-card:hover .media-thumb img { transform: scale(1.05); }
-    .play-btn {
-      position: absolute; top: 14px; right: 14px;
-      width: 38px; height: 38px; border-radius: 50%;
-      background: var(--gold); display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
-    }
-    .media-body { padding: 18px 20px 22px; }
-    .media-tag { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); }
-    .media-name { font-size: 1.05rem; font-weight: 700; margin-top: 6px; line-height: 1.3; }
-
-    .cta-card {
-      background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
-      border: 1px solid var(--line);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 30px;
-      border-radius: var(--r-md);
-    }
-    .cta-card p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; color: var(--gold-soft); line-height: 1.45; }
-    .cta-card a {
-      margin-top: 16px; background: var(--gold); color: var(--bg);
-      padding: 9px 22px; border-radius: 100px; font-size: 13px; font-weight: 700;
-      text-decoration: none; letter-spacing: 0.5px; transition: background 0.2s;
-    }
-    .cta-card a:hover { background: var(--gold-soft); }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    }
-    .skill {
-      background: var(--bg-2); border: 1px solid var(--line-soft);
-      border-radius: var(--r-md); padding: 26px;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .skill:hover { transform: translateY(-3px); border-color: var(--line); }
-    .skill .n { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 12px; }
-    .skill .t { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .skill .d { color: var(--muted); font-size: 14px; }
 
     /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: center; }
-    .about-img {
-      border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4/5;
-      border: 1px solid var(--line); box-shadow: var(--shadow); position: relative;
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
-    .about-img img { width: 100%; height: 100%; object-fit: cover; }
-    .about-tag {
-      position: absolute; bottom: 16px; left: 16px;
-      background: rgba(20,17,13,0.85); backdrop-filter: blur(8px);
-      border: 1px solid var(--line); color: var(--gold-soft);
-      padding: 7px 16px; border-radius: 100px; font-size: 13px; font-weight: 600;
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--brown-mid);
+      margin-top: 28px;
     }
-    .about-text p { color: var(--muted); font-size: 1.05rem; margin-top: 16px; }
-    .about-text p:first-of-type { margin-top: 22px; }
+    .about-image { position: relative; }
+    .about-image-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #E9E8E6; /* matches photo bg color so edges blend */
+      box-shadow: 0 24px 80px rgba(46,26,14,0.14);
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    /* Accent bar on left edge */
+    .about-image-frame::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10%; bottom: 10%;
+      width: 4px;
+      background: var(--warm-accent);
+      border-radius: 0 4px 4px 0;
+      z-index: 1;
+    }
+    .about-image-tag {
+      position: absolute;
+      bottom: -18px;
+      left: -18px;
+      background: var(--brown-dark);
+      color: var(--cream);
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(46,26,14,0.2);
+    }
+
+    /* ── SKILLS ── */
+    .skills { background: var(--brown-dark); color: var(--cream); }
+    .skills .section-title { color: var(--cream); }
+    .skills .section-label { color: var(--warm-accent); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .skill-card {
+      padding: 40px 36px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+    }
+    .skill-card:hover { background: rgba(255,255,255,0.05); }
+    .skill-number {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--warm-accent);
+      margin-bottom: 20px;
+    }
+    .skill-name {
+      font-weight: 800; font-size: 18px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 12px; color: var(--cream);
+    }
+    .skill-desc { font-size: 13px; line-height: 1.7; color: rgba(242,237,228,0.6); }
+
+    /* ── AMBASSADOR ── */
+    .ambassador-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .amb-card {
+      border: 1.5px solid rgba(92,61,38,0.15);
+      border-radius: 16px;
+      padding: 40px 32px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .amb-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--warm-accent);
+    }
+    .amb-card:hover { border-color: var(--warm-accent); transform: translateY(-4px); }
+    .amb-logo {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px;
+      color: white; margin-bottom: 20px;
+    }
+    .amb-logo.linera { background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); }
+    .amb-logo.fogo   { background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); }
+    .amb-logo.osl    { background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%); }
+    .amb-role {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 8px;
+    }
+    .amb-project {
+      font-weight: 900; font-size: 24px;
+      text-transform: uppercase;
+      color: var(--brown-dark); margin-bottom: 18px;
+      line-height: 1.1;
+    }
+    .amb-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .amb-points li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; line-height: 1.6; color: var(--brown-mid);
+    }
+    .amb-points li::before { content: '→'; color: var(--warm-accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PROJECTS ── */
+    .projects { background: #EDE8DF; }
+    .projects-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: end;
+      margin-bottom: 60px;
+    }
+    .projects-desc { font-size: 15px; line-height: 1.8; color: var(--brown-mid); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--cream);
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(92,61,38,0.1);
+      text-decoration: none;
+      display: block;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(46,26,14,0.12);
+    }
+    .project-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #C4A47C 0%, #8B6B4A 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .project-thumb-label {
+      font-weight: 900; font-size: 13px;
+      text-align: center; color: white;
+      line-height: 1.3; padding: 12px; text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .play-btn {
+      position: absolute;
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .project-card:hover .play-btn { transform: scale(1.1); }
+    .play-btn svg { margin-left: 3px; }
+    .project-info { padding: 18px 20px; }
+    .project-tag {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 6px;
+    }
+    .project-name { font-weight: 700; font-size: 14px; color: var(--brown-dark); line-height: 1.3; }
+
+    /* ── CONTENT / ARTICLES ── */
+    .content-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: end; margin-bottom: 60px;
+    }
+    .content-desc { font-size: 15px; line-height: 1.8; color: var(--brown-mid); }
+    .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .content-card {
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(92,61,38,0.1);
+      transition: transform 0.3s;
+      text-decoration: none; display: block;
+    }
+    .content-card:hover { transform: translateY(-4px); }
+    .content-thumb {
+      width: 100%; aspect-ratio: 4/3;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .content-thumb p {
+      color: white; font-weight: 800;
+      font-size: 14px; text-align: center; line-height: 1.4;
+    }
+    .content-body { background: var(--cream); padding: 18px 20px; }
+    .content-type {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--warm-accent); margin-bottom: 6px;
+    }
+    .content-title-card { font-weight: 700; font-size: 13px; color: var(--brown-dark); line-height: 1.4; }
+
+    /* ── STATS ── */
+    .stats { background: var(--brown-dark); color: var(--cream); }
+    .stats .section-title { color: var(--cream); }
+    .stats .section-label { color: var(--warm-accent); }
+    .stats-big {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 50px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stats-small {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      margin-top: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-item {
+      padding: 40px 28px;
+      background: var(--brown-dark);
+      text-align: center;
+    }
+    .stat-item.featured { background: rgba(196,146,90,0.12); }
+    .stat-number {
+      font-weight: 900;
+      font-size: clamp(28px, 3.5vw, 52px);
+      color: var(--cream);
+      letter-spacing: -1px; line-height: 1;
+    }
+    .stat-number.highlight { color: var(--warm-accent); }
+    .stat-label {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(242,237,228,0.45); margin-top: 10px;
+    }
+    .stat-platform { font-size: 11px; font-weight: 500; color: var(--warm-accent); margin-top: 5px; }
+    .stat-change { font-size: 11px; font-weight: 600; color: #5CB85C; margin-top: 4px; }
+    .stats-small .stat-item { padding: 24px 20px; }
+    .stats-small .stat-number { font-size: clamp(18px, 2vw, 28px); }
 
     /* ── CONTACT ── */
-    .contact {
-      padding: 110px var(--pad-x);
-      text-align: center;
-      background: radial-gradient(60% 100% at 50% 0%, rgba(196,146,90,0.12), transparent 70%);
-    }
-    .contact h2 {
+    .contact { background: var(--cream); text-align: center; padding: 120px 60px; }
+    .contact-headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      font-weight: 700; line-height: 1.05; margin: 14px auto 8px;
+      font-style: italic;
+      font-size: clamp(36px, 6vw, 80px);
+      color: var(--brown-dark);
+      margin: 20px 0 60px; line-height: 1.1;
     }
-    .contact .sub { color: var(--muted); max-width: 46ch; margin: 0 auto 36px; }
-    .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .contact-links {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 16px;
+    }
     .contact-link {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--bg-2); border: 1px solid var(--line);
-      color: var(--cream); padding: 14px 26px; border-radius: 100px;
-      font-size: 15px; font-weight: 600; text-decoration: none;
-      cursor: pointer; transition: transform 0.2s, border-color 0.2s, background 0.2s;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      border: 1.5px solid rgba(92,61,38,0.2);
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--brown-dark);
+      font-weight: 600; font-size: 14px;
+      transition: all 0.3s;
     }
-    .contact-link:hover { transform: translateY(-2px); border-color: var(--gold); background: var(--bg-3); }
-    .copy-hint { font-size: 12px; color: var(--muted-2); margin-top: 18px; min-height: 16px; }
+    .contact-link:hover {
+      background: var(--brown-dark); color: var(--cream);
+      border-color: var(--brown-dark);
+    }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 40px; font-size: 15px; color: var(--brown-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(92,61,38,0.3);
+      padding-bottom: 4px; transition: color 0.2s;
+    }
+    .contact-email:hover { color: var(--brown-dark); }
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--line-soft);
-      padding: 34px var(--pad-x);
+      background: var(--brown-dark);
+      color: rgba(242,237,228,0.5);
+      padding: 32px 60px;
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-      color: var(--muted-2); font-size: 14px;
+      font-size: 12px;
     }
-    .footer-logo { font-weight: 900; letter-spacing: 2px; color: var(--cream); }
+    footer .footer-logo { font-weight: 900; font-size: 16px; color: var(--cream); letter-spacing: 2px; }
 
-    /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-
-    /* ── Sticky mobile CTA ── */
-    .mobile-cta {
-      display: none;
-      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 90;
-      background: var(--gold); color: var(--bg);
-      text-align: center; padding: 15px; border-radius: 100px;
-      font-weight: 700; text-decoration: none;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      :root { --pad-x: 40px; }
-      .stats-bento { grid-template-columns: repeat(2, 1fr); }
-      .amb-grid { grid-template-columns: repeat(2, 1fr); }
-      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    /* ── RESPONSIVE TABLET (769px-1024px) ── */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      nav { padding: 20px 32px; }
+      section { padding: 80px 32px; }
+      .hero-photo-wrap { width: 44%; }
+      .hero-name { font-size: clamp(56px, 9vw, 110px); }
+      .about { gap: 48px; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .ambassador-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-big { grid-template-columns: repeat(2, 1fr); }
+      .stats-small { grid-template-columns: repeat(3, 1fr); }
+      .divider { margin: 0 32px; }
     }
 
+    /* ══ MOBILE RESPONSIVE ══ */
     @media (max-width: 768px) {
-      :root { --pad-x: 22px; }
+
+      /* ── NAVBAR ── */
+      nav {
+        grid-template-columns: 1fr 1fr;
+        padding: 18px 20px;
+      }
       .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-toggle { display: inline-flex; }
+      .nav-cta-standalone { justify-self: end; font-size: 13px; padding: 9px 18px; }
 
-      nav.menu-open { background: rgba(20,17,13,0.96); backdrop-filter: blur(16px); }
-      .mobile-menu {
-        display: none;
-        position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
-        background: rgba(20,17,13,0.98); backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column; padding: 16px 22px 24px;
+      /* ── HERO ── */
+      .hero {
+        height: 100svh !important;
+        min-height: 600px !important;
+        overflow: hidden;
       }
-      .mobile-menu.open { display: flex; }
-      .mobile-menu a {
-        padding: 14px 0; color: var(--cream); text-decoration: none;
-        font-size: 17px; font-weight: 600; border-bottom: 1px solid var(--line-soft);
+
+      .hero-photo-wrap {
+        width: 100% !important;
+        height: 100% !important;
+        bottom: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        overflow: hidden;
       }
-      .mobile-menu a.cta { color: var(--gold); border-bottom: none; }
 
-      .hero { padding-top: 110px; min-height: auto; }
-      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
-      .hero-photo { order: -1; max-width: 320px; }
-      .stats-bento { grid-template-columns: repeat(2, 1fr); }
-      .stat.feature { grid-column: span 2; }
-      .amb-grid { grid-template-columns: 1fr; }
-      .card-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 30px; }
-      .about-img { max-width: 340px; }
-      section.block { padding: 70px var(--pad-x); }
-      .mobile-cta { display: block; }
-      footer { justify-content: center; text-align: center; }
-    }
+      .hero-photo {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center 10% !important;
+        transform: none !important;
+      }
 
-    /* ── Motion safety ── */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-      .reveal { opacity: 1; transform: none; }
+      .hero-badge { display: none !important; }
+      .hero-spec  { display: none !important; }
+
+      .hero-bottom {
+        padding: 0 20px 24px !important;
+        background: linear-gradient(
+          to top,
+          rgba(242,237,228,0.95) 0%,
+          rgba(242,237,228,0.5) 50%,
+          transparent 100%
+        );
+      }
+
+      .hero-name {
+        font-size: clamp(40px, 11vw, 64px) !important;
+        letter-spacing: -2px !important;
+        line-height: 0.88 !important;
+      }
+
+      .hero-title {
+        font-size: clamp(14px, 4vw, 22px) !important;
+        letter-spacing: -0.3px !important;
+      }
+
+      /* ── ABOUT ── */
+      .about {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        padding: 52px 20px 60px !important;
+        overflow: hidden;
+      }
+
+      .about-image {
+        order: -1 !important;
+        width: 100% !important;
+      }
+
+      .about-image-frame {
+        width: 100% !important;
+        overflow: hidden;
+      }
+
+      .about-image img {
+        width: 100% !important;
+        aspect-ratio: 4/3 !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+      }
+
+      .about-image-tag {
+        font-size: 10px !important;
+        padding: 10px 14px !important;
+        bottom: -12px !important;
+        left: 0 !important;
+      }
+
+      .about-text { width: 100% !important; }
+      .about-text p { font-size: 15px !important; }
+
+      /* ── DIVIDER ── */
+      .divider { margin: 0 20px !important; }
+
+      /* ── SECTION BASE ── */
+      section { padding: 56px 20px !important; }
+
+      /* ── SKILLS ── */
+      .skills-grid { grid-template-columns: 1fr !important; }
+      .skill-card { padding: 28px 24px !important; }
+
+      /* ── AMBASSADOR ── */
+      .ambassador-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      #ambassador { padding: 56px 20px !important; }
+      .amb-card {
+        padding: 28px 24px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .amb-project { font-size: 20px !important; }
+
+      /* ── PROJECTS ── */
+      .projects-intro {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 32px !important;
+      }
+      .projects-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .project-card { width: 100% !important; }
+
+      /* ── ARTICLES ── */
+      #articles { padding: 56px 20px !important; }
+      .content-header {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 32px !important;
+      }
+      .content-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .content-card { width: 100% !important; }
+
+      /* ── STATS ── */
+      .stats-big { grid-template-columns: 1fr 1fr !important; }
+      .stats-small { grid-template-columns: 1fr 1fr !important; }
+      .stat-item { padding: 24px 16px !important; }
+      .stats-small .stat-item { padding: 18px 14px !important; }
+
+      /* ── CONTACT ── */
+      .contact { padding: 72px 20px !important; }
+      .contact-links {
+        gap: 10px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .contact-link { padding: 11px 18px !important; font-size: 13px !important; }
+
+      /* ── FOOTER ── */
+      footer {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+        padding: 24px 20px !important;
+      }
     }
   </style>
 </head>
@@ -545,290 +772,373 @@
 
   <!-- ── NAVBAR ── -->
   <nav id="navbar">
-    <a href="#home" class="nav-logo">RANIII.</a>
+    <a href="#" class="nav-logo">RANIII.</a>
+    
+    <!-- Nav links di tengah -->
     <ul class="nav-links">
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#ambassador">Ambassador</a></li>
-      <li><a href="#projects">Work</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stats">Stats</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Partner with me</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+  
+    <!-- Contact tetap kanan sendiri -->
+    <a href="#contact" class="nav-cta-standalone">Contact</a>
   </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#stats">Stats</a>
-    <a href="#ambassador">Ambassador</a>
-    <a href="#projects">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="cta">Partner with me →</a>
-  </div>
 
   <!-- ── HERO ── -->
-  <header class="hero" id="home">
-    <div class="hero-glow"></div>
-    <div class="hero-inner">
-      <div>
-        <span class="hero-badge"><span class="badge-dot"></span>Available for collaboration</span>
-        <h1>I am <span class="accent">Raniii</span><br/>Web3 Creator</h1>
-        <p class="hero-role">I turn complex protocols into <strong>research-driven content</strong> that onboards real users. Multi-project ambassador & KOL.</p>
-        <div class="hero-cta-row">
-          <a href="#contact" class="btn-primary">Partner with me
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#projects" class="btn-ghost">Watch my content</a>
-        </div>
-        <div class="hero-mini-stats">
-          <div><div class="num">1.4M</div><div class="lbl">Impressions</div></div>
-          <div><div class="num">4.5%</div><div class="lbl">Engagement</div></div>
-          <div><div class="num">4</div><div class="lbl">Ambassadorships</div></div>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="rani.png" alt="RANIII, Web3 content creator" width="1000" height="1250" fetchpriority="high" decoding="async" />
-      </div>
-    </div>
-  </header>
+  <section class="hero" id="home">
 
-  <!-- ── STATS ── -->
-  <section class="block" id="stats">
-    <div class="wrap">
-      <div class="block-head reveal">
-        <p class="section-label">— By the numbers</p>
-        <h2 class="section-title">X / Twitter analytics</h2>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="rani.png" alt="Raniii" />
+    </div>
+  
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for collaboration
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-name">I AM<br/>RANIII</div>
+      <div class="hero-title">WEB3<br/>CONTENT<br/>CREATOR</div>
+    </div>
+  
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label">— About Me</p>
+      <h2 class="section-title">WHO I AM</h2>
+      <p>Focused on introducing blockchain technology to make it more accessible to the public. I produce research-driven short form videos that make protocols and narratives easier to understand.</p>
+      <p style="margin-top:16px;">Experienced in delivering clear and transparent content regarding technical tutorials, alpha analysis, and airdrop strategies to assist users in navigating the decentralized ecosystem efficiently.</p>
+    </div>
+    <div class="about-image">
+      <div class="about-image-frame">
+        <img src="rani2.jpg" alt="Raniii" />
       </div>
-      <div class="stats-bento">
-        <div class="stat feature reveal">
-          <div class="num">1.4M</div>
-          <div class="lbl">Total Impressions</div>
-          <div class="delta">↑ 138% growth</div>
-        </div>
-        <div class="stat feature reveal">
-          <div class="num">478K</div>
-          <div class="lbl">Top Impressions</div>
-          <div class="plat">Single post</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">4.5%</div>
-          <div class="lbl">Engagement Rate</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">65.4K</div>
-          <div class="lbl">Engagements</div>
-          <div class="delta">↑ 73%</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">2,848</div>
-          <div class="lbl">Followers</div>
-          <div class="plat">@ranimth07</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">5,151</div>
-          <div class="lbl">Total Posts</div>
-          <div class="plat">X · Twitter</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">12.1K</div>
-          <div class="lbl">Profile Visits</div>
-          <div class="delta">↑ 56%</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">10.9K</div>
-          <div class="lbl">Total Likes</div>
-          <div class="delta">↑ 65%</div>
-        </div>
+      <div class="about-image-tag">Web3 Creator & KOL</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills" id="skills">
+    <p class="section-label">— My Expertise</p>
+    <h2 class="section-title">PERSONAL<br/>SKILLS</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-number">01</div>
+        <div class="skill-name">Deep Research & Analysis</div>
+        <p class="skill-desc">Proficient in performing in-depth project research, whitepaper analysis, and identifying market trends within the Web3 ecosystem.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">02</div>
+        <div class="skill-name">Communication</div>
+        <p class="skill-desc">Skilled in simplifying complex technical information into clear, engaging, and educational narratives for a diverse audience.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">03</div>
+        <div class="skill-name">Video Editing & Visual Design</div>
+        <p class="skill-desc">Skilled in CapCut and Canva to create high-impact educational content for various digital platforms.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">04</div>
+        <div class="skill-name">Photography & Videography</div>
+        <p class="skill-desc">Competent in visual storytelling through professional-grade image and video production.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-number">05</div>
+        <div class="skill-name">Community Management</div>
+        <p class="skill-desc">Capable of fostering growth and maintaining engagement across X (Twitter), Discord, and Telegram.</p>
+      </div>
+      <div class="skill-card" style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);">
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:rgba(242,237,228,0.12);text-align:center;line-height:1.4;">Building the<br/>decentralized<br/>future.</p>
       </div>
     </div>
   </section>
 
   <!-- ── AMBASSADOR ── -->
-  <section class="block" id="ambassador" style="background: var(--bg-2);">
-    <div class="wrap">
-      <div class="block-head reveal">
-        <p class="section-label">— Roles & Affiliations</p>
-        <h2 class="section-title">Ambassador &amp; community</h2>
+  <section id="ambassador" style="background:#EDE8DF; padding:100px 60px;">
+    <p class="section-label">— Roles & Affiliations</p>
+    <h2 class="section-title">AMBASSADOR<br/>& COMMUNITY</h2>
+    <div class="ambassador-grid">
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="linera_logo.png" alt="Linera" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+        </div>
+        <div class="amb-role">Ambassador</div>
+        <div class="amb-project">LINERA.IO</div>
+        <ul class="amb-points">
+          <li>Contributing to the Linera ecosystem by creating educational content and fostering community growth.</li>
+          <li>Bridging the communication gap between the protocol and the public through research-driven insights.</li>
+        </ul>
       </div>
-      <div class="amb-grid">
-        <div class="amb-card reveal">
-          <div class="amb-logo"><img src="linera_logo.png" alt="Linera logo" loading="lazy" decoding="async" /></div>
-          <div class="amb-role">Ambassador</div>
-          <div class="amb-project">LINERA.IO</div>
-          <ul class="amb-points">
-            <li>Creating educational content and fostering community growth across the Linera ecosystem.</li>
-            <li>Bridging protocol and public through research-driven insights.</li>
-          </ul>
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="fogo_logo.png" alt="Fogo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
         </div>
-        <div class="amb-card reveal">
-          <div class="amb-logo"><img src="fogo_logo.png" alt="Fogo logo" loading="lazy" decoding="async" /></div>
-          <div class="amb-role">Gigablaze</div>
-          <div class="amb-project">FOGO.IO</div>
-          <ul class="amb-points">
-            <li>Selected as a "Gigablaze" to drive engagement with high-quality educational content.</li>
-            <li>Simplifying narratives to onboard new users into the Fogo ecosystem.</li>
-          </ul>
+        <div class="amb-role">Gigablaze</div>
+        <div class="amb-project">FOGO.IO</div>
+        <ul class="amb-points">
+          <li>Selected as a "Gigablaze" to drive community engagement and provide high quality educational content.</li>
+          <li>Simplifying project narratives to assist in the onboarding of new users into the Fogo ecosystem.</li>
+        </ul>
+      </div>
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="osl_logo.png" alt="OSL Indonesia" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
         </div>
-        <div class="amb-card reveal">
-          <div class="amb-logo"><img src="osl_logo.png" alt="OSL Indonesia logo" loading="lazy" decoding="async" /></div>
-          <div class="amb-role">Ambassador</div>
-          <div class="amb-project">OSL INDONESIA</div>
-          <ul class="amb-points">
-            <li>Growing community presence and driving educational content for the local market.</li>
-            <li>Making blockchain accessible for Indonesian audiences.</li>
-          </ul>
+        <div class="amb-role">Ambassador</div>
+        <div class="amb-project">OSL INDONESIA</div>
+        <ul class="amb-points">
+          <li>Representing OSL Indonesia to grow community presence and drive educational content for the local market.</li>
+          <li>Bridging blockchain adoption through clear, accessible content for Indonesian audiences.</li>
+        </ul>
+      </div>
+      <div class="amb-card">
+        <div class="amb-logo">
+          <img src="zerion_logo.png" alt="Zerion" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
         </div>
-        <div class="amb-card reveal">
-          <div class="amb-logo"><img src="zerion_logo.png" alt="Zerion logo" loading="lazy" decoding="async" /></div>
-          <div class="amb-role">Ambassador</div>
-          <div class="amb-project">ZERION</div>
-          <ul class="amb-points">
-            <li>Earned Top Creator status, reaching 59K impressions through consistent content.</li>
-            <li>Drove 900 clicks &amp; 40 app downloads, onboarding 18 active users.</li>
-          </ul>
-        </div>
+        <div class="amb-role">Ambassador</div>
+        <div class="amb-project">ZERION</div>
+        <ul class="amb-points">
+          <li>Earned Top Creator status, reaching 59K impressions through consistent educational content.</li>
+          <li>Drove 900 clicks and 40 app downloads, onboarding 18 active Zerion users.</li>
+        </ul>
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <!-- ── PROJECTS ── -->
-  <section class="block" id="projects">
-    <div class="wrap">
-      <div class="block-head reveal">
+  <section class="projects" id="projects">
+    <div class="projects-intro">
+      <div>
         <p class="section-label">— Content Portfolio</p>
-        <h2 class="section-title">Video gallery</h2>
-        <p style="color:var(--muted); max-width:60ch; margin-top:14px;">Research-driven educational videos simplifying complex blockchain concepts. Tap any project to watch on X.</p>
+        <h2 class="section-title">PROJECT<br/>GALLERY</h2>
       </div>
-      <div class="card-grid">
-        <a href="https://x.com/ranimth07/status/1979121377014878640" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <img src="thumb1.jpg" alt="$MMT Community Offering video" loading="lazy" decoding="async" />
-            <span class="play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14110D"><polygon points="5,3 19,12 5,21"/></svg></span>
+      <p class="projects-desc">Research-driven educational videos where I simplify complex blockchain concepts and narratives. Tap each project to watch on X.</p>
+    </div>
+    <div class="projects-grid">
+
+      <a href="https://x.com/ranimth07/status/1979121377014878640" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb1.jpg" alt="$MMT Community Offering" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="media-body"><div class="media-tag">Video · UGC Challenge</div><div class="media-name">$MMT Community Offering</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/1978421451804844094" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <img src="thumb2.jpeg" alt="Learn FOGO with Raniii video" loading="lazy" decoding="async" />
-            <span class="play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14110D"><polygon points="5,3 19,12 5,21"/></svg></span>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · UGC Challenge</div>
+          <div class="project-name">$MMT Community Offering</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1978421451804844094" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb2.jpeg" alt="Learn FOGO with Raniii" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="media-body"><div class="media-tag">Video · Fogo Sessions EP4</div><div class="media-name">Learn FOGO with Raniii</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/2009215044584935452" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <img src="thumb3.jpg" alt="Compounding Interest video" loading="lazy" decoding="async" />
-            <span class="play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14110D"><polygon points="5,3 19,12 5,21"/></svg></span>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · Fogo Sessions EP4</div>
+          <div class="project-name">Learn FOGO with Raniii</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/2009215044584935452" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb3.jpg" alt="Compounding Interest" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="media-body"><div class="media-tag">Video · 1 Minute Series</div><div class="media-name">Let's Talk About Compounding Interest</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/1970866153821225353" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <img src="thumb4.jpeg" alt="Linera Testnet Conway video" loading="lazy" decoding="async" />
-            <span class="play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14110D"><polygon points="5,3 19,12 5,21"/></svg></span>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · 1 Minute Series</div>
+          <div class="project-name">Let's Talk About Compounding Interest</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1970866153821225353" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb4.jpeg" alt="Linera Testnet Conway" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="media-body"><div class="media-tag">Video · Education</div><div class="media-name">Linera Testnet Conway</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/1999459577734266980" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <img src="thumb5.jpg" alt="Mantle x RedStone video" loading="lazy" decoding="async" />
-            <span class="play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14110D"><polygon points="5,3 19,12 5,21"/></svg></span>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · Education</div>
+          <div class="project-name">Linera Testnet Conway</div>
+        </div>
+      </a>
+    
+      <a href="https://x.com/ranimth07/status/1999459577734266980" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb5.jpg" alt="Mantle x RedStone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="media-body"><div class="media-tag">Video · RWA</div><div class="media-name">Mantle x RedStone</div></div>
-        </a>
-        <div class="cta-card reveal">
-          <p>More on<br/>my X profile →</p>
-          <a href="https://x.com/ranimth07" target="_blank" rel="noopener">@ranimth07</a>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Video · RWA</div>
+          <div class="project-name">Mantle x RedStone</div>
+        </div>
+      </a>
+    
+      <!-- CTA Card -->
+      <div class="project-card" style="cursor:default; background:#EDE8DF; display:flex; align-items:center; justify-content:center; min-height:160px;">
+        <div style="text-align:center; padding:20px;">
+          <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:var(--brown-light); line-height:1.5;">More on<br/>my X profile →</p>
+          <a href="https://x.com/ranimth07" target="_blank" style="display:inline-block; margin-top:14px; background:var(--brown-dark); color:var(--cream); padding:8px 20px; border-radius:100px; font-size:12px; font-weight:700; text-decoration:none; letter-spacing:1px;">@ranimth07</a>
         </div>
       </div>
+    
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <!-- ── ARTICLES & DESIGN ── -->
-  <section class="block" id="articles" style="background: var(--bg-2);">
-    <div class="wrap">
-      <div class="block-head reveal">
+  <section id="articles" style="background:var(--cream); padding:100px 60px;">
+    <div class="content-header">
+      <div>
         <p class="section-label">— Written & Visual Work</p>
-        <h2 class="section-title">Article &amp; design</h2>
+        <h2 class="section-title">ARTICLE &<br/>DESIGN</h2>
       </div>
-      <div class="card-grid">
-        <a href="https://x.com/ranimth07/status/1950552485531402668" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb">
-            <video id="fwbVideo" muted loop playsinline preload="none" poster="thumb1.jpg" data-src="FWBFEST.mp4"></video>
-          </div>
-          <div class="media-body"><div class="media-tag">Video · 15.3K Views</div><div class="media-name">If tennis ran on microchains — Linera × FWBFEST'25</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/1986029341730369850" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb" style="background:#f5f0ff;">
-            <img src="Jumper_Giveaway.jpeg" alt="Jumper Giveaway campaign design" loading="lazy" decoding="async" style="object-fit:contain;" />
-          </div>
-          <div class="media-body"><div class="media-tag">Design · Campaign</div><div class="media-name">Jumper Giveaway — Win with Jumper Pass</div></div>
-        </a>
-        <a href="https://x.com/ranimth07/status/2011062688861061568" target="_blank" rel="noopener" class="media-card reveal">
-          <div class="media-thumb" style="background:#f8f8f8;">
-            <img src="5_things_about_Bounties.jpg" alt="5 Things About Bounties thread design" loading="lazy" decoding="async" style="object-fit:contain;" />
-          </div>
-          <div class="media-body"><div class="media-tag">Thread · 654 Impressions</div><div class="media-name">5 Things to Know Before Joining Bounties</div></div>
-        </a>
-      </div>
+      <p class="content-desc">Producing informative articles and visual designs focused on providing actionable insights and essential tips within the Web3 space.</p>
     </div>
-  </section>
+    <div class="content-grid">
 
-  <!-- ── SKILLS ── -->
-  <section class="block" id="skills">
-    <div class="wrap">
-      <div class="block-head reveal">
-        <p class="section-label">— My Expertise</p>
-        <h2 class="section-title">What I bring</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill reveal"><div class="n">01</div><div class="t">Deep Research & Analysis</div><div class="d">In-depth project research, whitepaper analysis, and market-trend identification within Web3.</div></div>
-        <div class="skill reveal"><div class="n">02</div><div class="t">Communication</div><div class="d">Simplifying complex technical information into clear, engaging educational narratives.</div></div>
-        <div class="skill reveal"><div class="n">03</div><div class="t">Video Editing & Visual Design</div><div class="d">CapCut and Canva to create high-impact educational content across platforms.</div></div>
-        <div class="skill reveal"><div class="n">04</div><div class="t">Photography & Videography</div><div class="d">Visual storytelling through professional-grade image and video production.</div></div>
-        <div class="skill reveal"><div class="n">05</div><div class="t">Community Management</div><div class="d">Growth and engagement across X (Twitter), Discord, and Telegram.</div></div>
-        <div class="skill reveal" style="display:flex;align-items:center;justify-content:center;background:transparent;border-style:dashed;">
-          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;color:var(--gold-soft);text-align:center;line-height:1.4;">Building the<br/>decentralized<br/>future.</p>
+      <!-- Card 1: VIDEO (FWBFEST.mp4) -->
+      <a href="https://x.com/ranimth07/status/1950552485531402668" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <video
+            autoplay muted loop playsinline
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+          >
+            <source src="FWBFEST.mp4" type="video/mp4" />
+          </video>
         </div>
-      </div>
+        <div class="content-body">
+          <div class="content-type">Video · 15.3K Views</div>
+          <div class="content-title-card">If tennis ran on microchains — Linera × FWBFEST'25</div>
+        </div>
+      </a>
+    
+      <!-- Card 2: IMAGE (Jumper Giveaway) -->
+      <a href="https://x.com/ranimth07/status/1986029341730369850" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <img
+  src="Jumper_Giveaway.jpeg"
+  alt="Jumper Giveaway"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain; background:#f5f0ff;"
+/>
+        </div>
+        <div class="content-body">
+          <div class="content-type">Design · Campaign</div>
+          <div class="content-title-card">Jumper Giveaway — Win with Jumper Pass</div>
+        </div>
+      </a>
+    
+      <!-- Card 3: IMAGE (5 Things about Bounties) -->
+      <a href="https://x.com/ranimth07/status/2011062688861061568" target="_blank" rel="noopener" class="content-card">
+        <div class="content-thumb" style="padding:0; position:relative; overflow:hidden;">
+          <img
+  src="5_things_about_Bounties.jpg"
+  alt="5 Things About Bounties"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain; background:#f8f8f8;"
+/>
+        </div>
+        <div class="content-body">
+          <div class="content-type">Thread · 654 Impressions</div>
+          <div class="content-title-card">5 Things You Should Know Before Joining Bounties</div>
+        </div>
+      </a>
+    
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
-  <section class="block" id="about">
-    <div class="wrap about-grid">
-      <div class="about-img reveal">
-        <img src="rani2.jpg" alt="RANIII portrait" width="900" height="1125" loading="lazy" decoding="async" />
-        <span class="about-tag">Web3 Creator & KOL</span>
+  <!-- ── STATS ── -->
+  <section class="stats" id="stats">
+    <p class="section-label">— By The Numbers</p>
+    <h2 class="section-title">TWITTER<br/>ANALYTICS</h2>
+
+    <!-- Big 4 stats -->
+    <div class="stats-big">
+      <div class="stat-item featured">
+        <div class="stat-number highlight">1.4M</div>
+        <div class="stat-label">Total Impressions</div>
+        <div class="stat-change">↑ 138%</div>
       </div>
-      <div class="about-text reveal">
-        <p class="section-label">— About me</p>
-        <h2 class="section-title">Who I am</h2>
-        <p>Focused on introducing blockchain technology and making it more accessible to the public. I produce research-driven short-form videos that make protocols and narratives easier to understand.</p>
-        <p>Experienced in delivering clear, transparent content on technical tutorials, alpha analysis, and airdrop strategies — helping users navigate the decentralized ecosystem efficiently.</p>
+      <div class="stat-item">
+        <div class="stat-number">2,848</div>
+        <div class="stat-label">Followers</div>
+        <div class="stat-platform">@ranimth07</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5,151</div>
+        <div class="stat-label">Total Posts</div>
+        <div class="stat-platform">X · Twitter</div>
+      </div>
+      <div class="stat-item featured">
+        <div class="stat-number highlight">478K</div>
+        <div class="stat-label">Top Impressions</div>
+        <div class="stat-platform">Per Post</div>
+      </div>
+    </div>
+
+    <!-- Small stats row -->
+    <div class="stats-small">
+      <div class="stat-item">
+        <div class="stat-number">65.4K</div>
+        <div class="stat-label">Engagements</div>
+        <div class="stat-change">↑ 73%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4.5%</div>
+        <div class="stat-label">Engagement Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10.9K</div>
+        <div class="stat-label">Total Likes</div>
+        <div class="stat-change">↑ 65%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12.1K</div>
+        <div class="stat-label">Profile Visits</div>
+        <div class="stat-change">↑ 56%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,167</div>
+        <div class="stat-label">Top Likes</div>
+        <div class="stat-platform">Single Tweet</div>
       </div>
     </div>
   </section>
 
   <!-- ── CONTACT ── -->
   <section class="contact" id="contact">
-    <div class="wrap">
-      <p class="section-label reveal">— Let's work together</p>
-      <h2 class="reveal">Ready to collaborate?</h2>
-      <p class="sub reveal">Open to ambassadorships, content partnerships, and campaign collaborations. Let's build your narrative.</p>
-      <div class="contact-links reveal">
-        <a href="https://x.com/ranimth07" target="_blank" rel="noopener" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L2.017 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          @ranimth07
-        </a>
-        <a href="https://t.me/ranimth07" target="_blank" rel="noopener" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.83.941z"/></svg>
-          @ranimth07
-        </a>
-        <button type="button" class="contact-link" id="discordCopy" data-handle="inirani">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-          inirani
-        </button>
-      </div>
-      <p class="copy-hint" id="copyHint" aria-live="polite"></p>
+    <p class="section-label">— Let's Work Together</p>
+    <h2 class="contact-headline">Ready to collaborate?</h2>
+    <div class="contact-links">
+      <a href="https://x.com/ranimth07" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L2.017 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @ranimth07
+      </a>
+      <a href="https://t.me/ranimth07" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.83.941z"/></svg>
+        @ranimth07
+      </a>
+      <a href="#" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.113 18.1.132 18.11a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        inirani
+      </a>
     </div>
   </section>
 
@@ -836,78 +1146,26 @@
   <footer>
     <span class="footer-logo">RANIII.</span>
     <span>Web3 Content Creator & KOL · 2026</span>
-    <a href="#home" style="color:var(--muted); text-decoration:none;">Back to top ↑</a>
+    <span>Designed with ♥</span>
   </footer>
 
-  <a href="#contact" class="mobile-cta">Partner with me →</a>
-
   <script>
-    // Navbar background on scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // Mobile menu toggle
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('mobileMenu');
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      navbar.classList.toggle('menu-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menu.classList.remove('open');
-      navbar.classList.remove('menu-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
 
-    // Scroll reveal (respects reduced-motion via CSS fallback)
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const reveals = document.querySelectorAll('.reveal');
-    if (prefersReduced || !('IntersectionObserver' in window)) {
-      reveals.forEach(el => el.classList.add('in'));
-    } else {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      reveals.forEach(el => io.observe(el));
-    }
-
-    // Lazy-load + autoplay the FWBFEST video only when in view
-    const fwb = document.getElementById('fwbVideo');
-    if (fwb && 'IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (!fwb.src) { fwb.src = fwb.dataset.src; }
-            if (!prefersReduced) { fwb.play().catch(() => {}); }
-          } else {
-            fwb.pause();
-          }
-        });
-      }, { threshold: 0.4 });
-      vio.observe(fwb);
-    }
-
-    // Copy Discord handle
-    const dc = document.getElementById('discordCopy');
-    const hint = document.getElementById('copyHint');
-    dc.addEventListener('click', async () => {
-      const handle = dc.dataset.handle;
-      try {
-        await navigator.clipboard.writeText(handle);
-        hint.textContent = 'Discord handle "' + handle + '" copied to clipboard ✓';
-      } catch (e) {
-        hint.textContent = 'Discord: ' + handle;
-      }
-    });
+    document.querySelectorAll('.skill-card, .amb-card, .project-card, .content-card, .stat-item')
+      .forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
