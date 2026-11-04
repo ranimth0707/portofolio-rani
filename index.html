@@ -462,6 +462,23 @@ nav.scrolled {
     /* ── MOTION / PROJECT ── */
     #motion, #work { scroll-margin-top: 88px; }
     .motion { background: var(--cream); }
+    .motion-grid.motion-collapsed .motion-extra { display: none; }
+    .motion-more-wrap { display: flex; justify-content: center; margin-top: 32px; }
+    .motion-more {
+      appearance: none;
+      background: var(--brown-dark);
+      color: var(--cream);
+      border: none;
+      border-radius: 100px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+    }
+    .motion-more:hover { background: var(--brown-mid); }
+
     .built { background: var(--brown-dark); }
     .built .section-title { color: var(--cream); }
     .built .section-label { color: var(--warm-accent); }
@@ -1148,20 +1165,20 @@ nav.scrolled {
         <p class="section-label">— Motion</p>
         <h2 class="section-title">MOTION</h2>
       </div>
-      <p class="projects-desc">Short films posted on X: motion graphics, pieces made on a phone, and the Web3 With Rani mini series. Tap a card to watch.</p>
+      <p class="projects-desc">Motion films posted on X, newest first. Tap a card to watch.</p>
     </div>
-    <div class="projects-grid">
+    <div class="projects-grid motion-grid motion-collapsed" id="motion-grid">
 
-      <a href="https://x.com/ranimth07/status/2103420754817917427" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2117802900219170867" target="_blank" rel="noopener" class="project-card">
         <div class="project-thumb">
-          <img src="thumb-motion-prompt.jpg" alt="Motion Graphic from One Prompt" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="thumb-m-2117802900219170867.jpg" alt="Tangem Self-Custody" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
         <div class="project-info">
-          <div class="project-tag">Motion · 19.2K Views</div>
-          <div class="project-name">Motion Graphic from One Prompt</div>
+          <div class="project-tag">Motion · 121 Views</div>
+          <div class="project-name">Tangem Self-Custody</div>
         </div>
       </a>
 
@@ -1178,20 +1195,111 @@ nav.scrolled {
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2105135353552339080" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2117083322065334659" target="_blank" rel="noopener" class="project-card">
         <div class="project-thumb">
-          <img src="thumb-motion-opus.jpg" alt="Opus 5.5 Motion Test" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="thumb-m-2117083322065334659.jpg" alt="AI Perfume Ad" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
         <div class="project-info">
-          <div class="project-tag">Motion · 4.7K Views</div>
-          <div class="project-name">Opus 5.5 Motion Test</div>
+          <div class="project-tag">Motion · 739 Views</div>
+          <div class="project-name">AI Perfume Ad</div>
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2112087083213115624" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2116429474556502095" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb-m-2116429474556502095.jpg" alt="Girl Math, Crypto Cashback" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 829 Views</div>
+          <div class="project-name">Girl Math, Crypto Cashback</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2116345385572868360" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb-m-2116345385572868360.jpg" alt="Zerion Halloween Giveaway" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 951 Views</div>
+          <div class="project-name">Zerion Halloween Giveaway</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2116171727613067495" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb">
+          <img src="thumb-m-2116171727613067495.jpg" alt="Quotum, a Budget for Every Seat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.2K Views</div>
+          <div class="project-name">Quotum, a Budget for Every Seat</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2115351866150433144" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2115351866150433144.jpg" alt="Data Foundation Trace" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 555 Views</div>
+          <div class="project-name">Data Foundation Trace</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2114768829905846278" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2114768829905846278.jpg" alt="Nabu Pro Trading Bot" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 573 Views</div>
+          <div class="project-name">Nabu Pro Trading Bot</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2112544687253082537" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2112544687253082537.jpg" alt="Solflare Packs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 738 Views</div>
+          <div class="project-name">Solflare Packs</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2112157394939850972" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2112157394939850972.jpg" alt="La Familia, El Encuentro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 868 Views</div>
+          <div class="project-name">La Familia, El Encuentro</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2112087083213115624" target="_blank" rel="noopener" class="project-card motion-extra">
         <div class="project-thumb">
           <img src="thumb-motion-conso.jpg" alt="Conso, 15-Second Motion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
@@ -1204,46 +1312,241 @@ nav.scrolled {
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2084173184161788315" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2111446679526465902" target="_blank" rel="noopener" class="project-card motion-extra">
         <div class="project-thumb">
-          <img src="thumb-talk-analysis.jpg" alt="Web3 With Rani: Project Analysis" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="thumb-m-2111446679526465902.jpg" alt="Conso Consumer Passport" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
         <div class="project-info">
-          <div class="project-tag">Motion · Mini Series</div>
-          <div class="project-name">Web3 With Rani: Project Analysis</div>
+          <div class="project-tag">Motion · 4.9K Views</div>
+          <div class="project-name">Conso Consumer Passport</div>
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2084460223536963707" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2111397461789196387" target="_blank" rel="noopener" class="project-card motion-extra">
         <div class="project-thumb">
-          <img src="thumb-talk-wallets.jpg" alt="Web3 With Rani: DeFi Wallets" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="thumb-m-2111397461789196387.jpg" alt="OnRails Finance cETH" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
         <div class="project-info">
-          <div class="project-tag">Motion · Mini Series</div>
-          <div class="project-name">Web3 With Rani: DeFi Wallets</div>
+          <div class="project-tag">Motion · 1K Views</div>
+          <div class="project-name">OnRails Finance cETH</div>
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2084949603842224340" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2110573370110771611" target="_blank" rel="noopener" class="project-card motion-extra">
         <div class="project-thumb">
-          <img src="thumb-talk-agent.jpg" alt="Web3 With Rani: AI-Agent Wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="thumb-m-2110573370110771611.jpg" alt="Sui Basecamp, 40M TPS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
         </div>
         <div class="project-info">
-          <div class="project-tag">Motion · Mini Series</div>
-          <div class="project-name">Web3 With Rani: AI-Agent Wallet</div>
+          <div class="project-tag">Motion · 19.8K Views</div>
+          <div class="project-name">Sui Basecamp, 40M TPS</div>
         </div>
       </a>
 
-      <a href="https://x.com/ranimth07/status/2086080925289627785" target="_blank" rel="noopener" class="project-card">
+      <a href="https://x.com/ranimth07/status/2110385135782940931" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2110385135782940931.jpg" alt="Library Motion Templates" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.6K Views</div>
+          <div class="project-name">Library Motion Templates</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2110340552361496646" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2110340552361496646.jpg" alt="Sui World-Record Recap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 7.9K Views</div>
+          <div class="project-name">Sui World-Record Recap</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2109896302142324820" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2109896302142324820.jpg" alt="HEY Research Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 904 Views</div>
+          <div class="project-name">HEY Research Lab</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2109565576456892678" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2109565576456892678.jpg" alt="Grow, Invest from $10" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 5.6K Views</div>
+          <div class="project-name">Grow, Invest from $10</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2109270493492879691" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2109270493492879691.jpg" alt="First US Stock on Grow" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.1K Views</div>
+          <div class="project-name">First US Stock on Grow</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2108850754199204071" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2108850754199204071.jpg" alt="Baranos, Who Checks AI Agents" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 11K Views</div>
+          <div class="project-name">Baranos, Who Checks AI Agents</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2108744876502429966" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2108744876502429966.jpg" alt="Library Motion Hub" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 18.5K Views</div>
+          <div class="project-name">Library Motion Hub</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2107879427271250025" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2107879427271250025.jpg" alt="Baranos Bounty Judge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 12K Views</div>
+          <div class="project-name">Baranos Bounty Judge</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2107479276291567754" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2107479276291567754.jpg" alt="Superteam VN, Road to Colosseum" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 627 Views</div>
+          <div class="project-name">Superteam VN, Road to Colosseum</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2106083978847633695" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2106083978847633695.jpg" alt="AllScale Living Frame" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.8K Views</div>
+          <div class="project-name">AllScale Living Frame</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2105930499348930931" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2105930499348930931.jpg" alt="Base Builder Roundtable" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.2K Views</div>
+          <div class="project-name">Base Builder Roundtable</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2105135353552339080" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-motion-opus.jpg" alt="Opus 5.5 Motion Test" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 4.7K Views</div>
+          <div class="project-name">Opus 5.5 Motion Test</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2104937030497251684" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2104937030497251684.jpg" alt="Zerion UI Journey" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 16.5K Views</div>
+          <div class="project-name">Zerion UI Journey</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2103679613402771700" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-m-2103679613402771700.jpg" alt="Streamflow Token Burn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 2.7K Views</div>
+          <div class="project-name">Streamflow Token Burn</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2103420754817917427" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-motion-prompt.jpg" alt="Motion Graphic from One Prompt" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 19.2K Views</div>
+          <div class="project-name">Motion Graphic from One Prompt</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2086080925289627785" target="_blank" rel="noopener" class="project-card motion-extra">
         <div class="project-thumb">
           <img src="thumb-talk-defi.jpg" alt="Web3 With Rani: DeFi Basics" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
           <div class="play-btn">
@@ -1256,6 +1559,48 @@ nav.scrolled {
         </div>
       </a>
 
+      <a href="https://x.com/ranimth07/status/2084949603842224340" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-talk-agent.jpg" alt="Web3 With Rani: AI-Agent Wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · Mini Series</div>
+          <div class="project-name">Web3 With Rani: AI-Agent Wallet</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2084460223536963707" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-talk-wallets.jpg" alt="Web3 With Rani: DeFi Wallets" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · Mini Series</div>
+          <div class="project-name">Web3 With Rani: DeFi Wallets</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2084173184161788315" target="_blank" rel="noopener" class="project-card motion-extra">
+        <div class="project-thumb">
+          <img src="thumb-talk-analysis.jpg" alt="Web3 With Rani: Project Analysis" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · Mini Series</div>
+          <div class="project-name">Web3 With Rani: Project Analysis</div>
+        </div>
+      </a>
+
+    </div>
+    <div class="motion-more-wrap">
+      <button type="button" class="motion-more" id="motion-more" aria-expanded="false" aria-controls="motion-grid">Show more</button>
     </div>
   </section>
 
@@ -1478,6 +1823,18 @@ nav.scrolled {
         }
       });
     }, { threshold: 0.08 });
+
+
+    const motionGrid = document.getElementById('motion-grid');
+    const motionMore = document.getElementById('motion-more');
+    if (motionGrid && motionMore) {
+      motionMore.addEventListener('click', () => {
+        const collapsed = motionGrid.classList.toggle('motion-collapsed');
+        motionMore.textContent = collapsed ? 'Show more' : 'Show less';
+        motionMore.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        if (collapsed) document.getElementById('motion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
 
     document.querySelectorAll('.skill-card, .amb-card, .project-card, .content-card, .stat-item')
       .forEach(el => observer.observe(el));
