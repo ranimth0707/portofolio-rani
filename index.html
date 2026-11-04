@@ -459,6 +459,67 @@ nav.scrolled {
     }
     .project-name { font-weight: 700; font-size: 14px; color: var(--brown-dark); line-height: 1.3; }
 
+    /* ── MOTION / TALKING HEAD / PROJECT ── */
+    #motion, #talking-head, #work { scroll-margin-top: 88px; }
+    .motion { background: var(--cream); }
+    .talking { background: #EDE8DF; }
+    .built { background: var(--brown-dark); }
+    .built .section-title { color: var(--cream); }
+    .built .section-label { color: var(--warm-accent); }
+    .built .projects-desc { color: rgba(242,237,228,0.72); }
+    .built-grid { margin-top: 0; }
+    .built .amb-card {
+      background: var(--cream);
+      border-color: transparent;
+    }
+    .built .amb-card:hover {
+      border-color: transparent;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .card-links a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--brown-dark);
+      background: rgba(196,146,90,0.18);
+      border-radius: 100px;
+      padding: 8px 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .card-links a:hover { background: var(--brown-dark); color: var(--cream); }
+    .thumb-a { background: linear-gradient(145deg, #6B4226 0%, #4A2C18 48%, #2E1A0E 100%); }
+    .thumb-b { background: linear-gradient(160deg, #5C3D26 0%, #3E2414 55%, #2E1A0E 100%); }
+    .thumb-c { background: linear-gradient(135deg, #7A4E32 0%, #5C3D26 50%, #2E1A0E 100%); }
+    .thumb-d { background: linear-gradient(150deg, #4A2C18 0%, #3E2414 52%, #2E1A0E 100%); }
+    .talk-thumb { background: linear-gradient(165deg, #5C3D26 0%, #3E2414 52%, #2E1A0E 100%); }
+    .talk-thumb.thumb-b { background: linear-gradient(155deg, #6B4226 0%, #4A2C18 50%, #2E1A0E 100%); }
+    .talk-thumb.thumb-c { background: linear-gradient(145deg, #4A2C18 0%, #2E1A0E 58%, #24140C 100%); }
+    .talk-thumb.thumb-d { background: linear-gradient(160deg, #7A4E32 0%, #5C3D26 48%, #2E1A0E 100%); }
+    .slate-kicker {
+      position: absolute;
+      top: 14px; left: 16px;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #F0D78C;
+    }
+    .slate-num {
+      position: absolute;
+      left: 16px; bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-weight: 400;
+      font-size: 28px; color: #F2EDE4;
+      letter-spacing: 0; line-height: 1;
+    }
+
     /* ── CONTENT / ARTICLES ── */
     .content-header {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -587,6 +648,8 @@ nav.scrolled {
       .hero-name { font-size: clamp(56px, 9vw, 110px); }
       .about { gap: 48px; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 13px; }
       .ambassador-grid { grid-template-columns: repeat(2, 1fr); }
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
       .stats-big { grid-template-columns: repeat(2, 1fr); }
@@ -779,6 +842,9 @@ nav.scrolled {
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#motion">Motion</a></li>
+      <li><a href="#talking-head">Talking Head</a></li>
+      <li><a href="#work">Project</a></li>
       <li><a href="#stats">Stats</a></li>
     </ul>
   
@@ -1012,6 +1078,296 @@ nav.scrolled {
         </div>
       </div>
     
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── MOTION ── -->
+  <section class="motion" id="motion">
+    <div class="projects-intro">
+      <div>
+        <p class="section-label">— Motion</p>
+        <h2 class="section-title">MOTION</h2>
+      </div>
+      <p class="projects-desc">Short motion graphics posted on X: Claude Code workflows, pieces from one prompt, and films made on a phone. Tap a card to watch.</p>
+    </div>
+    <div class="projects-grid">
+
+      <a href="https://x.com/ranimth07/status/2110721682050838994" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb thumb-a">
+          <span class="slate-kicker">Motion</span>
+          <span class="slate-num">01</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 16.4K Views</div>
+          <div class="project-name">Claude Code Motion Workflow</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2103420754817917427" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb thumb-b">
+          <span class="slate-kicker">Motion</span>
+          <span class="slate-num">02</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 19.2K Views</div>
+          <div class="project-name">Motion Graphic from One Prompt</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2117558350548529228" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb thumb-c">
+          <span class="slate-kicker">Motion</span>
+          <span class="slate-num">03</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 6.6K Views</div>
+          <div class="project-name">Zerion Motion, Made on a Phone</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2105135353552339080" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb thumb-d">
+          <span class="slate-kicker">Motion</span>
+          <span class="slate-num">04</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 4.7K Views</div>
+          <div class="project-name">Opus 5.5 Motion Test</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2112087083213115624" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb thumb-a">
+          <span class="slate-kicker">Motion</span>
+          <span class="slate-num">05</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Motion · 1.9K Views</div>
+          <div class="project-name">Conso, 15-Second Motion</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── TALKING HEAD ── -->
+  <section class="talking" id="talking-head">
+    <div class="projects-intro">
+      <div>
+        <p class="section-label">— Talking Head</p>
+        <h2 class="section-title">TALKING<br/>HEAD</h2>
+      </div>
+      <p class="projects-desc">On-camera explainers, including the Web3 With Rani mini series on project analysis, wallets, and DeFi, plus walks through RWA, a first portfolio, and onchain data. Tap a card to watch on X.</p>
+    </div>
+    <div class="projects-grid">
+
+      <a href="https://x.com/ranimth07/status/2084173184161788315" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb">
+          <span class="slate-kicker">Series</span>
+          <span class="slate-num">01</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · Mini Series</div>
+          <div class="project-name">Web3 With Rani: Project Analysis</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2084460223536963707" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb thumb-b">
+          <span class="slate-kicker">Series</span>
+          <span class="slate-num">02</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · Mini Series</div>
+          <div class="project-name">Web3 With Rani: DeFi Wallets</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2084949603842224340" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb thumb-c">
+          <span class="slate-kicker">Series</span>
+          <span class="slate-num">03</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · Mini Series</div>
+          <div class="project-name">Web3 With Rani: AI-Agent Wallet</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2086080925289627785" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb thumb-d">
+          <span class="slate-kicker">Series</span>
+          <span class="slate-num">04</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · Mini Series</div>
+          <div class="project-name">Web3 With Rani: DeFi Basics</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2086999865150886131" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb">
+          <span class="slate-kicker">Explainer</span>
+          <span class="slate-num">05</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · 4.1K Views</div>
+          <div class="project-name">Explaining RWA &amp; Tokenization</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2008123220592074863" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb thumb-b">
+          <span class="slate-kicker">Explainer</span>
+          <span class="slate-num">06</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · 6.2K Views</div>
+          <div class="project-name">How to Build Your First Crypto Portfolio</div>
+        </div>
+      </a>
+
+      <a href="https://x.com/ranimth07/status/2015777975468495105" target="_blank" rel="noopener" class="project-card">
+        <div class="project-thumb talk-thumb thumb-c">
+          <span class="slate-kicker">Explainer</span>
+          <span class="slate-num">07</span>
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2E1A0E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">Talking Head · 4.0K Views</div>
+          <div class="project-name">How I Analyze Onchain Data</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECT ── -->
+  <section class="built" id="work">
+    <div class="projects-intro">
+      <div>
+        <p class="section-label">— Project</p>
+        <h2 class="section-title">PROJECT</h2>
+      </div>
+      <p class="projects-desc">Studios, hackathon builds, and tools from the past year. Open the product or the X post from each card.</p>
+    </div>
+    <div class="ambassador-grid built-grid">
+
+      <article class="amb-card">
+        <div class="amb-role">Motion Studio</div>
+        <div class="amb-project">Librani</div>
+        <ul class="amb-points">
+          <li>Motion studio for crypto brands.</li>
+          <li>13 films in 17 days, about 81K views on X.</li>
+          <li>3 contest wins, including 1st place for Zerion.</li>
+          <li>Includes a free Library Motion hub.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://librani.org" target="_blank" rel="noopener">librani.org</a>
+          <a href="https://x.com/ranimth07/status/2108744876502429966" target="_blank" rel="noopener">Library Motion teaser</a>
+        </div>
+      </article>
+
+      <article class="amb-card">
+        <div class="amb-role">Hackathon</div>
+        <div class="amb-project">ZeroClaw Payment Desk</div>
+        <ul class="amb-points">
+          <li>USDC-on-Solana payments for a real WhatsApp shop.</li>
+          <li>Honorable Mention, ZeroClaw Labs hackathon.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://x.com/ranimth07/status/2085423314307260773" target="_blank" rel="noopener">Build on X</a>
+          <a href="https://x.com/ranimth07/status/2093177579763347655" target="_blank" rel="noopener">Award post</a>
+        </div>
+      </article>
+
+      <article class="amb-card">
+        <div class="amb-role">Hackathon</div>
+        <div class="amb-project">Nullius</div>
+        <ul class="amb-points">
+          <li>DeFi safety checks for AI agents.</li>
+          <li>Built for the Binance Agent OS Mini Hackathon.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://x.com/ranimth07/status/2097397568066159022" target="_blank" rel="noopener">Demo on X</a>
+        </div>
+      </article>
+
+      <article class="amb-card">
+        <div class="amb-role">Agent Skill</div>
+        <div class="amb-project">PanicShield</div>
+        <ul class="amb-points">
+          <li>AI agent skill against panic selling on X Layer.</li>
+          <li>32.8K views on X.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://x.com/ranimth07/status/2044056380768956593" target="_blank" rel="noopener">Watch on X</a>
+        </div>
+      </article>
+
+      <article class="amb-card">
+        <div class="amb-role">Tool</div>
+        <div class="amb-project">RektoMeter</div>
+        <ul class="amb-points">
+          <li>Airdrop journal that tracks real PnL.</li>
+          <li>13.9K views on X.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://x.com/ranimth07/status/2039035652248068239" target="_blank" rel="noopener">Launch on X</a>
+        </div>
+      </article>
+
+      <article class="amb-card">
+        <div class="amb-role">Onchain</div>
+        <div class="amb-project">Onchain Arisan</div>
+        <ul class="amb-points">
+          <li>Indonesian rotating savings, put onchain.</li>
+          <li>Join a group, contribute, and take the pot on your turn.</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://x.com/ranimth07/status/2102403908102397984" target="_blank" rel="noopener">Demo on X</a>
+        </div>
+      </article>
+
     </div>
   </section>
 
